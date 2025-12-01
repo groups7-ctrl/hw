@@ -1,31 +1,55 @@
-flowchart LR
-    %% 方向採 LR 來營造「左右外部、中央系統」的版面
-    %% === 節點 ===
-    P0["0. AI 智能貓咪飼料推薦系統"]
+```mermaid
+erDiagram
+    %% 1. 飼主與使用者檔案
+    OWNER {
+        int owner_id PK "1"
+        string username "飼主名稱"
+    }
 
-    subgraph EXL[ ]
-      direction TB
-      E1["E1: 貓咪飼主"]
-    end
+    %% 2. 貓咪檔案 (推薦目標)
+    CAT {
+        int cat_id PK "101"
+        int owner_id FK "1"
+        string name "貓咪暱稱 (Mimi)"
+        int age_month "年齡 (月)"
+        float weight_kg "體重 (kg)"
+        string health_status "健康狀態"
+    }
 
-    subgraph EXR[ ]
-      direction TB
-      E2["E2: 獸醫資料庫 / 診所系統"]
-      E3["E3: 飼料產品供應商 API"]
-    end
+    %% 3. 飼料產品資料庫
+    PRODUCT {
+        int product_id PK "5001"
+        string name "產品名稱"
+        string brand "品牌"
+        float protein_rate "蛋白質百分比"
+        string target_life_stage "適用階段 (成貓/幼貓)"
+        string product_type "產品類別 (乾糧/濕食)"
+    }
 
-    %% === 樣式 (Mermaid 內建樣式) ===
-    classDef system fill:#b2dfdb,stroke:#263238,stroke-width:2px,color:#000
-    classDef entity fill:#f5f5f5,stroke:#263238,stroke-width:2px,color:#000
-    class P0 system
-    class E1,E2,E3 entity
+    %% 6. 組合實體 1: AI 推薦結果快照 (M:N)
+    RECOMMENDATION_SNAPSHOT {
+        int snapshot_id PK "20251201_01"
+        int cat_id FK "101"
+        datetime timestamp "推薦執行時間"
+        string engine_version "AI模型版本"
+    }
 
-    %% === 資料流 ===
-    E1 -- "註冊/登入、貓咪資料(健康/偏好)" --> P0
-    P0 -- "推薦飼料清單、購買連結、健康分析報告" --> E1
+    %% 7. 組合實體 2: 推薦細項 (M:N)
+    RECOMMENDATION_ITEM {
+        int item_id PK "1"
+        int snapshot_id FK "20251201_01"
+        int product_id FK "5001"
+        float match_score "AI匹配分數 (0.95)"
+        int rank "排序名次"
+        float price_realtime "即時價格"
+        boolean is_available "是否有庫存"
+    }
 
-    P0 -- "健康數據查詢請求 (病症代碼)" --> E2
-    E2 -- "疾病與營養學關聯數據" --> P0
 
-    P0 -- "產品數據/價格查詢" --> E3
-    E3 -- "飼料產品規格、即時價格/庫存" --> P0
+    %% 關聯定義
+    OWNER ||--o{ CAT : "擁有 (Owns)"
+    CAT ||--o{ RECOMMENDATION_SNAPSHOT : "針對 (For)"
+        
+    %% M:N 關係 1: 推薦快照與產品
+    RECOMMENDATION_SNAPSHOT ||--|{ RECOMMENDATION_ITEM : "包含 (Includes)"
+    PRODUCT ||--o{ RECOMMENDATION_ITEM : "被推薦 (Is Recommended)"
