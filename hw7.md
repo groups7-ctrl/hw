@@ -1,4 +1,3 @@
-* ERD圖
 ```mermaid
 erDiagram
     %% 1. 飼主與使用者檔案
