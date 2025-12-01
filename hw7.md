@@ -10,7 +10,6 @@ erDiagram
     CAT {
         int cat_id PK "101"
         int owner_id FK "1"
-        string name "貓咪暱稱 (Mimi)"
         int age_month "年齡 (月)"
         float weight_kg "體重 (kg)"
         string health_status "健康狀態"
