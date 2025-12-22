@@ -1,15 +1,15 @@
 # 分鏡板(storyboard) 
 
 ## 圖 1：首頁 
-![1](https://github.com/adams7718/Smart-tourism/blob/main/1.png)
+<img width="394" height="333" alt="螢幕擷取畫面 2025-12-22 125540" src="https://github.com/user-attachments/assets/494bcfe2-3ff1-4150-b07b-45b6e6aed40d" />
 
 ## A. 輸入欄位 (Input Fields)
 
 | 欄位名稱 (Field Name) | 資料型態 (Data Type) | 驗證規則 / 觸發行為 (Validation Rules / Triggered Actions) |
 | :--- | :--- | :--- |
-| **電子郵件 (Email)** | 字符串 (String) | 1. **必填**。2. 必須為有效 Email 格式。 |
+| **帳號 (account)** | 字符串 (String) | 1. **必填**。2. 必須為有效 Email 格式。 |
 | **密碼 (Password)** | 字符串 (String) | 1. **必填**。2. **👁 圖標**：切換顯示/隱藏。 |
-| **登入 (Login)** | 按鈕 (Button) | 點擊：使用 Email 與密碼進行**身份驗證**，成功後導向首頁。 |
+| **登入 (Login)** | 按鈕 (Button) | 點擊：使用帳號與密碼進行**身份驗證**，成功後導向首頁。 |
 | **忘記密碼？ (Forgot Password?)** | 連結/按鈕 (Link/Button) | 點擊：導向**忘記密碼**流程頁面。 |
 | **前往註冊 (Go to Register)** | 按鈕 (Button) | 點擊：導向**使用者註冊**頁面。 |
 
@@ -19,20 +19,20 @@
 | 欄位名稱 (Field Name) | 功能描述 (Description) |
 | :--- | :--- |
 | **🔒 使用者登入 (User Login)** | 頁面標題。 |
-| **電子郵件 (Email)** | 電子郵件輸入框的標籤。 |
+| **帳號 (account)** | 帳號輸入框的標籤。 |
 | **密碼 (Password)** | 密碼輸入框的標籤。 |
 | **👁 圖標 (Eye Icon)** | 切換密碼內容顯示/隱藏。 |
 ---
 
 
 ## 圖 2：註冊頁面 
-![2](https://github.com/adams7718/Smart-tourism/blob/main/2.png)
+<img width="310" height="382" alt="螢幕擷取畫面 2025-12-22 125250" src="https://github.com/user-attachments/assets/bedba7c5-96fd-4c22-bc65-44e92c7bda34" />
 
 ## A. 輸入欄位 (Input Fields)
+
 | 欄位名稱 (Field Name) | 資料型態 (Data Type) | 驗證規則 / 觸發行為 (Validation Rules / Triggered Actions) |
 | :--- | :--- | :--- |
-| **電子郵件 (Email)** | 字符串 (String) | 1. **必填**。2. 必須為有效 Email 格式。3. 系統中**唯一**。 |
-| **暱稱 (Nickname)** | 字符串 (String) | 1. **必填**。2. 建議系統中唯一。3. 最小/最大長度限制。 |
+| **帳號 (account)** | 字符串 (String) | 1. **必填**。2. 必須為有效帳號格式。3. 系統中**唯一**。 |
 | **密碼 (Password)** | 字符串 (String) | 1. **必填**。2. 建議有複雜度限制。3. **👁 圖標**：切換顯示/隱藏。 |
 | **再次確認密碼 (Confirm Password)** | 字符串 (String) | 1. **必填**。2. 必須與 **密碼** 欄位的值**完全一致**。3. **👁 圖標**：切換顯示/隱藏。 |
 | **註冊 (Register)** | 按鈕 (Button) | 點擊：執行所有欄位驗證，成功後建立帳號並導向指定頁面。 |
@@ -43,93 +43,40 @@
 
 | 欄位名稱 (Field Name) | 功能描述 (Description) |
 | :--- | :--- |
-| **📋 註冊新帳號 (Register New Account)** | 頁面標題。 |
-| **請輸入電子郵件 (Please enter email)** | 電子郵件輸入框的標籤。 |
-| **請輸入暱稱 (Please enter nickname)** | 暱稱輸入框的標籤。 |
+| **📋 註冊新帳號 (Register New Account)** | 頁面標題。 | 
+| **請輸入帳號 (Please enter account)** | 帳號輸入框的標籤。 |
 | **請輸入密碼 (Please enter password)** | 密碼輸入框的標籤。 |
 | **請再次確認密碼 (Please confirm password again)** | 確認密碼輸入框的標籤。 |
 | **👁 圖標 (Eye Icon)** | 切換密碼內容顯示/隱藏。 |
 ---
 
-## 圖 3：忘記密碼 
-![3](https://github.com/adams7718/Smart-tourism/blob/main/3.png)
+
+## 圖 3：使用者介面
+<img width="924" height="384" alt="螢幕擷取畫面 2025-12-22 125604" src="https://github.com/user-attachments/assets/d3a529e6-c4c0-497d-b665-7216393c7ae1" />
 
 ## A. 輸入欄位 (Input Fields)
 
 | 欄位名稱 (Field Name) | 資料型態 (Data Type) | 驗證規則 / 觸發行為 (Validation Rules / Triggered Actions) |
 | :--- | :--- | :--- |
-| **電子郵件 (Email)** | 字符串 (String) | 1. **必填**。2. 必須為有效 Email 格式。3. 該 Email **必須存在**於系統中。 |
-| **發送驗證碼 (Send Verification Code)** | 按鈕 (Button) | 點擊：1. 驗證 Email。2. 成功後，**發送驗證碼**至該 Email 或手機。3. **觸發顯示**驗證碼/提示訊息，並可能在計時後**自動跳轉**到下一步 (輸入驗證碼/重設密碼)。 |
-| **返回登入頁面 (Back to Login Page)** | 按鈕 (Button) | 點擊：導向「使用者登入」頁面。 |
-
+| **暱稱 (Nickname)** | 字符串 (String) | 1. **必填**。2. 必須為有效帳號格式。3. 系統中**唯一**。 |
+| **年齡 (age)** | 字符串 (String) | 1. **必填**。2. 必須為有效帳號格式。|
+| **體重 (weight)** | 字符串 (String) | 1. **必填**。2. 必須為有效帳號格式。|
+| **品種 (Register)** | 字符串 (String) | 1. **必填**。2. 必須為有效帳號格式。 |
+| **健康狀況/過敏原 (Health status/allergens)** | 字符串 (String) | 1. **必填**。2. 必須為有效帳號格式。 |
+| **儲存所有變更 (Store all changes) ( | 按鈕 (Button) | 點擊：儲存並導向「功能」頁面。 |
 ---
-
-## B. 螢幕顯示欄位 (Output Fields)
-| 欄位名稱 (Field Name) | 功能描述 (Description) |
-| :--- | :--- |
-| **🔑 忘記密碼 (Forgot Password)** | 頁面標題，提示使用者當前頁面的功能。 |
-| **電子郵件 (Email)** | 電子郵件輸入框的標籤。 |
-| **您的驗證碼是 (Your verification code is)** | **（訊息區塊）** 成功發送驗證碼後顯示的提示訊息。 |
-| **驗證碼 (Verification Code)** | **（訊息區塊）** 顯示系統生成的驗證碼（如圖中的 `625859`）。 |
-| **自動跳轉提示 (Auto-redirect Prompt)** | **（訊息區塊）** 提示使用者畫面將在指定時間 (如圖中的 `5 秒`) 後自動跳轉到下一個步驟。 |
----
-
-## 圖 4：重設密碼
-![4](https://github.com/adams7718/Smart-tourism/blob/main/4.png)
-
-## A. 輸入欄位 (Input Fields)
-
-| 欄位名稱 (Field Name) | 資料型態 (Data Type) | 驗證規則 / 觸發行為 (Validation Rules / Triggered Actions) |
-| :--- | :--- | :--- |
-| **請輸入驗證碼 (Please enter verification code)** | 字符串 (String) | 1. **必填**。2. 必須輸入**有效的**、**未過期**的驗證碼。 |
-| **請輸入新密碼 (Please enter new password)** | 字符串 (String) | 1. **必填**。2. 建議有複雜度限制 (如長度、包含字符類型)。3. **👁 圖標**：切換顯示/隱藏。 |
-| **請再次確認新密碼 (Please re-confirm new password)** | 字符串 (String) | 1. **必填**。2. 必須與 **請輸入新密碼** 欄位的值**完全一致**。3. **👁 圖標**：切換顯示/隱藏。 |
-| **重設密碼 (Reset Password)** | 按鈕 (Button) | 點擊：1. 驗證所有欄位。2. 成功後，**更新**使用者的密碼。3. 導向「登入頁面」或顯示成功訊息。 |
-| **返回登入頁面 (Back to Login Page)** | 按鈕 (Button) | 點擊：導向「使用者登入」頁面。 |
-
----
-
-## B. 螢幕顯示欄位 (Output Fields)
-| 欄位名稱 (Field Name) | 功能描述 (Description) |
-| :--- | :--- |
-| **🔄 重設密碼 (Reset Password)** | 頁面標題，提示使用者當前正在進行密碼重設操作。前方的 **循環/更新圖標** 🔄 強化主題。 |
-| **請輸入驗證碼 (Please enter verification code)** | 驗證碼輸入框的標籤。 |
-| **請輸入新密碼 (Please enter new password)** | 新密碼輸入框的標籤。 |
-| **請再次確認新密碼 (Please re-confirm new password)** | 確認新密碼輸入框的標籤。 |
-| **👁 圖標 (Eye Icon)** | 切換密碼內容顯示/隱藏。 |
----
-
-## 圖 5：使用者介面
-![5](https://github.com/adams7718/Smart-tourism/blob/main/5.png)
-
-## A. 輸入欄位 (Input Fields)
-
-| 欄位名稱 (Field Name) | 資料型態 (Data Type) | 驗證規則 / 觸發行為 (Validation Rules / Triggered Actions) |
-| :--- | :--- | :--- |
-| **登出 (Logout)** | 按鈕 (Button) | 點擊：執行**登出**操作，清除使用者會話 (Session/Token)，導向「使用者登入」頁面。 |
-| **使用 AI 自動排行程** | 按鈕 (Button) | 點擊：**啟動 AI 智慧排程**功能，導向相關配置頁面，讓 AI 根據需求自動生成行程。 |
-| **自己搜尋瀏覽景點** | 按鈕/連結 (Button/Link) | 點擊：**啟動手動自由配置**功能，導向景點搜尋或地圖瀏覽頁面，讓使用者自行規劃行程。 |
-| **<<** | 圖標/按鈕 (Icon/Button) | 點擊：**切換側邊欄**的顯示/隱藏狀態，用於釋放更多主畫面空間。 |
-| **Deploy** | 文字/按鈕 (Text/Button) | 點擊：**(用途待定)** 依據上下文，可能是部署環境切換或特定系統功能。 |
-| **⋮ (更多選項)** | 圖標/按鈕 (Icon/Button) | 點擊：**顯示更多**操作或設定的選單 (如：帳號設定、幫助等)。 |
-
----
-
-## B. 螢幕顯示欄位 (Output Fields)
 
 | 欄位名稱 (Field Name) | 功能描述 (Description) |
 | :--- | :--- |
-| **👤 123** | 顯示當前**登入的使用者暱稱或 ID** (圖中為 `123`)。 |
-| **分隔線 (Horizontal Line 1 & 2)** | 視覺分隔線，用於區分側邊欄的不同區域 (如：個人資訊區與操作區)。 |
-| **✨ 歡迎來到台灣旅遊小幫手** | 頁面主標題，歡迎使用者並說明產品名稱。 |
-| **AI 智慧排程 (全新升級)** | **功能區塊標題 1**，介紹 AI 排程功能。 |
-| **AI 介紹 (Description for AI)** | 描述 AI 智慧排程的功能細節，包括自動排程、排序、計算交通等。 |
-| **手動自由配置** | **功能區塊標題 2**，介紹手動自由配置功能。 |
-| **手動配置介紹 (Description for Manual)** | 描述手動配置的功能細節，包括自訂旅遊天數、搜尋資料圖片、自由加入行程。 |
+| **暱稱 (Nickname)** | 暱稱輸入框的標籤。 | 
+| **年齡 (age)** | 年齡輸入框的標籤。 |
+| **體重 (weight)** | 體重輸入框的標籤。 |
+| **品種 (Register)** | 品種輸入框的標籤。 |
+| **健康狀況/過敏原 (Health status/allergens)** | 健康狀況/過敏原輸入框的標籤。 |
 ---
 
-## 圖 6：行程規劃頁(ai規劃行程)
-![7](https://github.com/adams7718/Smart-tourism/blob/main/6.png)
+## 圖 6：功能頁面
+<img width="1062" height="579" alt="螢幕擷取畫面 2025-12-22 131414" src="https://github.com/user-attachments/assets/c4e138c6-4e6d-4255-918b-9915e11dc135" />
 
 ## A. 輸入欄位 (Input Fields)
 | 欄位名稱 (Field Name) | 資料型態 (Data Type) | 驗證規則 / 觸發行為 (Validation Rules / Triggered Actions) |
